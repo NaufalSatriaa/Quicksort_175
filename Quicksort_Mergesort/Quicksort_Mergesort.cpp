@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-int arr[20];
+int arr[20]; 
 int cmp_count = 0;
 int mov_count = 0;
 int n;
@@ -25,4 +25,11 @@ void input() {
 		cout << "<" << (i + 1) << ">";
 		cin >> arr[i];
 	}
+}
+
+void swap(int x, int y) {
+	int temp;
+	temp = arr[x];
+	arr[x] = arr[y];
+	arr[y] = temp;
 }
