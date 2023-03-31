@@ -36,37 +36,39 @@ void swap(int x, int y) {
 
 void q_sort(int low, int high) {
 	int pivot, i, j;
-	if (low > high)
+	if (low > high)// langkah 1
 		return;
 
 	// partition the list into two parts
 	// one centaining element less that or equal to pivot
 	// outher containing element greather than pivot
-	i = low + 1;
-	j = high;
-	pivot = arr[low];
+	pivot = arr[low]; // langkah 2
+	i = low + 1;// langkah 3
+	j = high; // langkah 4
+	
 
-	while (i <= j) {
+	while (i <= j) {// langkah 10
 		//search for an element greater than pivot
-		while ((arr[i] <= pivot) && (i <= high)) {
-			i++;
+		while ((arr[i] <= pivot) && (i <= high)) {//langkah 5
+			i++;//langkah6
 			cmp_count++;
 		}
 		cmp_count++;
 		///search for an element less thanor equal to pivot
-		while ((arr[j] > pivot) && (j >= low)) {
-			j--;
+		while ((arr[j] > pivot) && (j >= low)) {//langkah 7
+			j--;//langkah 8
 			cmp_count++;
 		}
 	}
 	cmp_count++;
-	if (i < j) {//if greater element is on left of the element
+	if (i < j) {// langkah 9
+		//if greater element is on left of the element
 		
 		//swap the element at index i with the element at index j
 		swap(i, j);
 		mov_count++;
 	}//j now containt the index of the last element in the sort list
-	if (low < j) {
+	if (low < j) {//langkah 11
 		//move to the pivot to its correct position in the list
 		swap(low, j);
 		mov_count++;
